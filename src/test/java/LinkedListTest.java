@@ -6,11 +6,13 @@ public class LinkedListTest {
     Node node1 = new Node(1);
     Node node2 = new Node(2);
     Node node3 = new Node(3);
+    Node node4 = new Node(1);
+
     DeletDuplicateExample deletDuplicateExample =new DeletDuplicateExample();
     Find_the_nth_element_behind_examlpe findTheNthElementBehindExamlpe= new Find_the_nth_element_behind_examlpe();
     Delete_nodeExample delete_nodeExample = new Delete_nodeExample();
     Create_groups_smaller_than_x_example create_groups_smaller_than_x_example =new Create_groups_smaller_than_x_example();
-
+    CheckPalindromeExample checkPalindromeExample = new CheckPalindromeExample();
     @Before
     public void 노드생성(){
         for(int i= 0 ; i<10;i++)
@@ -25,6 +27,14 @@ public class LinkedListTest {
         node3.appendToTail(10);
         node3.appendToTail(2);
         node3.appendToTail(1);
+
+        node4.appendToTail(2);
+        node4.appendToTail(3);
+        node4.appendToTail(3);
+        node4.appendToTail(3);
+        node4.appendToTail(2);
+        node4.appendToTail(1);
+
     }
     @Test
     public void 노드출력(){
@@ -61,4 +71,11 @@ public class LinkedListTest {
     public void 특정x보다작은그룹만들기(){
         create_groups_smaller_than_x_example.Create_groups_smaller_than_x(node3,5).printnode();
     }
+    @Test
+    public void 회문여부확인하기(){
+        assertTrue(checkPalindromeExample.CheckPalindrome(node4));
+        node4.appendToTail(1);
+        assertFalse(checkPalindromeExample.CheckPalindrome(node4));
+    }
+
 }
