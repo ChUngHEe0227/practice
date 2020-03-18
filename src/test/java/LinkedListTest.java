@@ -5,10 +5,12 @@ import static org.junit.Assert.*;
 public class LinkedListTest {
     Node node1 = new Node(1);
     Node node2 = new Node(2);
-
+    Node node3 = new Node(3);
     DeletDuplicateExample deletDuplicateExample =new DeletDuplicateExample();
     Find_the_nth_element_behind_examlpe findTheNthElementBehindExamlpe= new Find_the_nth_element_behind_examlpe();
     Delete_nodeExample delete_nodeExample = new Delete_nodeExample();
+    Create_groups_smaller_than_x_example create_groups_smaller_than_x_example =new Create_groups_smaller_than_x_example();
+
     @Before
     public void 노드생성(){
         for(int i= 0 ; i<10;i++)
@@ -16,6 +18,20 @@ public class LinkedListTest {
 
         for(int i= 0 ; i<10;i++)
             node2.appendToTail(1);
+
+        node3.appendToTail(5);
+        node3.appendToTail(8);
+        node3.appendToTail(5);
+        node3.appendToTail(10);
+        node3.appendToTail(2);
+        node3.appendToTail(1);
+    }
+    @Test
+    public void 노드출력(){
+        node1.printnode();
+        node2.printnode();
+        node3.printnode();
+
     }
     @Test
     public void 노드확인(){
@@ -40,5 +56,9 @@ public class LinkedListTest {
         deletDuplicateExample.DeletDuplicate(node2);
         assertTrue(delete_nodeExample.Delete_node(node1.getNext()));
         assertFalse(delete_nodeExample.Delete_node(node2.getNext().getNext()));
+    }
+    @Test
+    public void 특정x보다작은그룹만들기(){
+        create_groups_smaller_than_x_example.Create_groups_smaller_than_x(node3,5).printnode();
     }
 }
