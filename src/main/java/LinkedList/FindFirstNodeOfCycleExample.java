@@ -11,7 +11,7 @@ public class FindFirstNodeOfCycleExample {
             FastRunner= FastRunner.next.next;
             if(SlowRunner==FastRunner)break;
         }
-        while(SlowRunner==node){
+        while(SlowRunner!=node){
              node=node.next;
              SlowRunner = SlowRunner.next;
         }
