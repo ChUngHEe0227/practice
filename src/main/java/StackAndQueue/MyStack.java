@@ -47,7 +47,7 @@ public class MyStack {
     }
     public void printStack(){
         while(top!=null){
-            System.out.println(top.data+' ');
+            System.out.printf("%c ",top.data);
             top= top.next;
         }
     }
