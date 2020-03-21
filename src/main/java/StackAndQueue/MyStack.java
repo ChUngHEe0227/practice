@@ -45,4 +45,10 @@ public class MyStack {
     public boolean isEmpty(){
         return top==null;
     }
+    public void printStack(){
+        while(top!=null){
+            System.out.println(top.data+' ');
+            top= top.next;
+        }
+    }
 }
