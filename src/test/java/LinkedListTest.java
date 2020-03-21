@@ -13,6 +13,7 @@ public class LinkedListTest {
     Delete_nodeExample delete_nodeExample = new Delete_nodeExample();
     Create_groups_smaller_than_x_example create_groups_smaller_than_x_example =new Create_groups_smaller_than_x_example();
     CheckPalindromeExample checkPalindromeExample = new CheckPalindromeExample();
+    FindFirstNodeOfCycleExample findFirstNodeOfCycleExample = new FindFirstNodeOfCycleExample();
     @Before
     public void 노드생성(){
         for(int i= 0 ; i<10;i++)
@@ -76,6 +77,11 @@ public class LinkedListTest {
         assertTrue(checkPalindromeExample.CheckPalindrome(node4));
         node4.appendToTail(1);
         assertFalse(checkPalindromeExample.CheckPalindrome(node4));
+    }
+    @Test
+    public void 회전순열에서시작점찾기(){
+        node3.getNext().getNext().getNext().getNext().getNext().getNext().setNext(node3.getNext().getNext().getNext().getNext());
+        assertSame(findFirstNodeOfCycleExample.FindFirstNodeOfCycle(node3),node3.getNext().getNext().getNext().getNext());
     }
 
 }
