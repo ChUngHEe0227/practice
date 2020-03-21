@@ -3,7 +3,7 @@ package StackAndQueue;
 import java.util.Stack;
 
 public class SortStackExample {
-    public void SortStack(Stack<Integer> OrigiNalStack){
+    public Stack<Integer> SortStack(Stack<Integer> OrigiNalStack){
         Stack<Integer> tempStack = new Stack();
         tempStack.push(OrigiNalStack.pop());
         int CaryyNumber;
@@ -20,5 +20,6 @@ public class SortStackExample {
                 tempStack.push(CaryyNumber);
             }
         }
+        return tempStack;
     }
 }
