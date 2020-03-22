@@ -8,6 +8,7 @@ public class StackAndQueueTest {
     MyStack MyStack =new MyStack();
     StackWithMin MinStack =new StackWithMin();
     SortStackExample sortStackExample = new SortStackExample();
+    MyQueue myQueue = new MyQueue();
     @Before
     public void 스텍이잘만들어졌는지확인(){
         MyStack.push('1');
@@ -45,5 +46,15 @@ public class StackAndQueueTest {
             Answerstack.push(10-i);
         }
         assertSame(stack,sortStackExample.SortStack(Answerstack));
+    }
+    @Test
+    public void 큐테스트(){
+        myQueue.push(1);
+        myQueue.push(2);
+        myQueue.push(3);
+        assertSame(1,myQueue.pop());
+        assertSame(2,myQueue.pop());
+        myQueue.push(4);
+        assertSame(3,myQueue.pop());
     }
 }
