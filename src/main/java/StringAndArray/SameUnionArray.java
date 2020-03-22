@@ -11,9 +11,7 @@ public class SameUnionArray {
         return new String(content);
     }
     public boolean SameUnionArraycheck(String Original, String compare){
-        System.out.println(sort(Original).equals(sort(compare)));
         return sort(Original).equals(sort(compare));
-
     }
 
 }
