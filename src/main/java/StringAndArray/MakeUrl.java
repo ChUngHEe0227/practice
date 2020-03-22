@@ -3,30 +3,32 @@ package StringAndArray;
 import java.util.Arrays;
 
 public class MakeUrl {
-    public void changeUrl(char[] StringSource){
+    public char[] changeUrl(char[] StringSource){
         int SpaceCount = 0;
         int Index = 0;
         int truelengh = StringSource.length;
-        System.out.printf(truelengh+"");
-        for(int i = 0; truelengh>i;i++){
+        for(int i = 0; i<truelengh;i++){
             if (StringSource[i]==' '){
                 SpaceCount++;
             }
         }
         Index = SpaceCount*2 + truelengh;
-        if(truelengh<StringSource.length) StringSource[truelengh]='\0';
+        char[] value = new char[Index];
+        value[Index-1]='\0';
         for (int i = truelengh-1; i>=0;i--){
             if (StringSource[i] ==' '){
-                StringSource[Index-1] ='0';
-                StringSource[Index-2] ='2';
-                StringSource[Index-3] ='%';
+                value[Index-1] ='0';
+                value[Index-2] ='2';
+                value[Index-3] ='%';
                 Index = Index-3;
             }
             else{
-                StringSource[Index-1] = StringSource[i];
+                value[Index-1] = StringSource[i];
                 Index--;
             }
         }
-        System.out.printf(StringSource.toString());
+
+        System.out.println(value);
+        return value;
     }
 }
