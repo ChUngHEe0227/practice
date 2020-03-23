@@ -26,10 +26,12 @@ public class StringAndArrayTest {
     public void 순열여부확인테스트(){
         assertTrue(sameUnionArray.SameUnionArraycheck("dog", "god"));
     }
+
     @Test
     public void 회문순열여부확인(){
         assertSame(true,Palindrome.palindromeCheck("tactcoa"));
     }
+
     @Test
     public void 한글자만바꿔서수정가능한지여부확인하기(){
         assertFalse( modificationExample.Change_check_Test("appl".toCharArray(),"aplw".toCharArray()));
