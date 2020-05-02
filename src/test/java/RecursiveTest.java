@@ -1,3 +1,4 @@
+import Recursive.GetSubset;
 import Recursive.GridRobot;
 import Recursive.Thripstep;
 
@@ -12,7 +13,8 @@ import static org.junit.Assert.*;
 
 public class RecursiveTest {
     Thripstep thripstep = new Thripstep();
-    GridRobot gridRobot= new GridRobot();
+    GridRobot gridRobot = new GridRobot();
+    GetSubset getSubset = new GetSubset();
     @Test
     public void 트리플스텝테스트(){
         assertThat(thripstep.countWay(4),is(7));
@@ -25,5 +27,11 @@ public class RecursiveTest {
         HashSet<Point> failPoint = new HashSet<Point>();
         assertTrue(gridRobot.getPath(maze1,2,2,path,failPoint));
         assertFalse(gridRobot.getPath(maze2,2,2,path,failPoint));
+    }
+    @Test
+    public void 부분집합테스트(){
+        ArrayList<Integer> arrayList = new ArrayList<Integer>();
+        arrayList.add(1);
+        arrayList.add(2);
     }
 }
