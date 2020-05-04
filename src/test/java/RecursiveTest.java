@@ -1,5 +1,6 @@
 import Recursive.GetSubset;
 import Recursive.GridRobot;
+import Recursive.Perms;
 import Recursive.Thripstep;
 
 import org.junit.*;
@@ -9,12 +10,14 @@ import java.util.ArrayList;
 import java.util.HashSet;
 
 import static org.hamcrest.core.Is.is;
+import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.Assert.*;
 
 public class RecursiveTest {
     Thripstep thripstep = new Thripstep();
     GridRobot gridRobot = new GridRobot();
     GetSubset getSubset = new GetSubset();
+    Perms perms = new Perms();
     @Test
     public void 트리플스텝테스트(){
         assertThat(thripstep.countWay(4),is(7));
@@ -33,5 +36,16 @@ public class RecursiveTest {
         ArrayList<Integer> arrayList = new ArrayList<Integer>();
         arrayList.add(1);
         arrayList.add(2);
+    }
+    @Test
+    public void 순열만들기(){
+        ArrayList<String> testArray1 = new ArrayList<String>();
+        ArrayList<String> testArray2 = new ArrayList<String>();
+        testArray1.add("h");
+        testArray2.add("he");
+        testArray2.add("eh");
+        //assertThat(perms.getPerms("h"),testArray1);
+        //assertSame(perms.getPerms("he"),testArray2);
+
     }
 }
